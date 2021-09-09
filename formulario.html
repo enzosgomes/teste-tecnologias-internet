@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário</title>
+</head>
+<body>
+    <h1>Cadastro Aluno</h1>
+    <div><p>Nome:</p>
+    <input type="text" id="name" name="nome"></div>
+    <div><p>Descrição:</p>
+        <textarea name="descricao" id="description" cols="30" rows="10" maxlength="144"></textarea>
+    </div>
+    <div><p>Estado:</p>
+        <select name="estado" id="state">
+            <option value="ce">CE</option>
+            <option value="sp">SP</option>
+            <option value="ms">MS</option>
+        </select>
+    </div>
+    <div><p>Idioma:</p>
+        <select name="idiomas" id="languages" multiple>
+                <option value="pt">portugues</option>
+                <option value="es">espanhol</option>
+                <option value="in">ingles</option>
+        </select>
+    </div>
+    <div><p>Gênero:</p>
+            <input type="radio" id="gender" name="genero" value="masculino" >
+            <label for="m">masculino</label>
+            <input type="radio" id="gender" name="genero" value="feminino" >
+            <label for="f">feminino</label>
+            <input type="radio" id="gender" name="genero" value="outro" >
+            <label for="ou">outro</label>
+    </div>
+    <div>
+            <input type="checkbox" id="terms" name="termo">
+            <label for="terms">aceitar termo de condições</label>
+    </div>
+    <div>
+        <button onclick="numCaracter()">Número caracteres</button>
+        <button onclick="numPalavras()">Número de palavras</button>
+        <button onclick="exibirForm()">Exibir</button>
+    </div>
+    <script>
+        function numCaracter(){
+            var name = document.getElementById("name").value;
+            var quantCaracter = name.length;
+            alert("Numero de caracteres nome: " + quantCaracter);
+        }
+        function numPalavras(){
+            var text = document.getElementById("description").value;
+            var quatPalavras = text.split(" ");
+            alert("Numero de palavras descrição:  " + quatPalavras.length);
+        }
+        function exibirForm(){
+            var formulario;
+            var nome = document.getElementById("name").value;
+            var estado = document.getElementById("state").value;
+            var idioma = document.getElementById("languages").value;
+            var genero = document.getElementById("gender").value;
+            var termo = document.getElementById("terms").value;
+            result = " nome: " + nome + " estado: " + estado + " idioma: " + idioma + " genero: " + genero + " termo " + termo;
+            alert(result);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <select name="operações" id="operacao">
+        <option value="adicao">+</option>
+        <option value="subtracao">-</option>
+        <option value="multiplicacao">*</option>
+        <option value="divisao">/</option>
+    </select>
+    <button onclick="calcula()">=</button>
+    <output id="resultado">resultado</output>
+    <script>
+        function calcula(){
+            var resultado;
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            var operacao = document.getElementById("operacao");
+            if (operacao.selectedIndex == 0) {
+                resultado = num1 + num2;
+            } else if (operacao.selectedIndex == 1) {
+                resultado = num1 - num2;
+            } else if (operacao.selectedIndex == 2) {
+                resultado = num1 * num2;
+            } else if (operacao.selectedIndex == 3) {
+                resultado = num1 / num2;
+            }
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>
